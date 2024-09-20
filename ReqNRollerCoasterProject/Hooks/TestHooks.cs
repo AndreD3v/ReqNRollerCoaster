@@ -1,4 +1,5 @@
-﻿using Serilog.Context;
+﻿using ReqNRollerCoasterProject.Support;
+using Serilog.Context;
 using Serilog.Events;
 
 namespace ReqNRollerCoasterProject.Hooks
@@ -46,6 +47,12 @@ namespace ReqNRollerCoasterProject.Hooks
         {
             Log.Information("AfterScenario - Completed scenario: {LogScope}");
             LogContext.Reset();
+        }
+
+        [AfterStep("@demo")]
+        public static void AfterStep()
+        {
+            DemoHelpers.SleepForDefinedDurationForDemoPurpose();
         }
     }
 }

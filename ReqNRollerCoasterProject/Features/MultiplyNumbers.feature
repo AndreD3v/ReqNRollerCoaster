@@ -1,3 +1,4 @@
+@demo
 Feature: MultiplyNumbers
   As a user
   I want to multiply two numbers

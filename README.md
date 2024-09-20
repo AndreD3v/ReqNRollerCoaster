@@ -9,7 +9,7 @@ This guide will help you set up your environment and understand the key componen
 
 ### ReqNroll Extension
 
-To participate in this deepdive, you need to install the ReqNroll extension. This extension provides enhanced functionality for running tests using Behavior Driven Development (BDD) principles. ReqNroll is the successor to SpecFlow, a popular Gherkin-based tool for .NET. I decided to move away from SpecFlow after reading below article, which explains the challenges with SpecFlow's development and how ReqNroll offers modern updates and better community support, while maintaining compatibility with existing projects.
+To participate in this deepdive, you need to install the ReqNroll extension. This extension provides enhanced functionality for running tests using Behavior Driven Development (BDD) principles. ReqNroll is the successor to SpecFlow, a popular Gherkin-based tool for .NET. I decided to move away from SpecFlow after reading this article, which explains the challenges with SpecFlow's development and how ReqNroll offers modern updates and better community support, while maintaining compatibility with existing projects.
 
 For more background, check the article https://reqnroll.net/news/2024/02/from-specflow-to-reqnroll-why-and-how/.
 
@@ -43,12 +43,24 @@ Serilog is configured to log messages to both the console and a file. The log en
 
 ### Finding the Log Files
 
-The log files are stored in the `logfiles` directory within the project `bin` directory. Each log file is named with a timestamp to ensure uniqueness.
+The log files are stored in the `logfiles` directory within the project 'bin' directory. Each log file is named with a timestamp to ensure uniqueness.
 
 ## Parallel Execution
 
 We have configured the tests to run in parallel to improve efficiency and reduce execution time. This is achieved using the NUnit `Parallelizable` attribute.
 
+## Conditional Sleep with @demo Tag
+
+In this deepdive, we have implemented a conditional sleep mechanism that is triggered by the `@demo` tag. This is useful for demonstration purposes, Enabling us to pause execution after each step in certain scenarios helps visualize parallel test execution and highlights the time savings achieved by running tests simultaneously.
+
+### How It Works
+
+1. **Tagging Scenarios**: Only scenarios or feature files tagged with `@demo` will trigger the sleep mechanism.
+2. **AfterStep Hook**: The `AfterStep` hook in `TestHooks.cs` checks for the `@demo` tag and calls the `SleepForDefinedDurationForDemoPurpose` method from `DemoHelpers.cs`.
+
+#### Example Scenario with @demo Tag
+
 ## Conclusion
 
 By following this guide, you should be able to set up your environment for the Parallel Testing deepdive. If you have any questions or run into issues, please don't hesitate to ask for help. Happy testing!
+

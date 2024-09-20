@@ -41,5 +41,11 @@ namespace ReqNRollerCoasterProject.StepDefinitions
             Log.Information($"_result = {_result}");
         }
 
+        [When("the two numbers are divided")]
+        public void WhenTheTwoNumbersAreDivided()
+        {
+            _result = _firstNumber / _secondNumber;
+            Log.Information($"_result = {_result}");
+        }
     }
 }

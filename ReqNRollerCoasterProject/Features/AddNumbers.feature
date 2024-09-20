@@ -1,3 +1,4 @@
+@demo
 Feature: AddNumbers
   As a user
   I want to add two numbers

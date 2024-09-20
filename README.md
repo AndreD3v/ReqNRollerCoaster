@@ -47,7 +47,7 @@ The log files are stored in the `logfiles` directory within the project `bin` di
 
 ## Parallel Execution
 
-We have configured the tests to run in parallel to improve efficiency and reduce execution time. This is achieved using the NUnit `Parallelizable` attribute.
+We have configured the tests to run in parallel to improve efficiency and reduce execution time. This is achieved using the NUnit `Parallelizable` attribute of the `AssemblyInfo.cs` file.
 
 ## Conditional Sleep with @demo Tag
 

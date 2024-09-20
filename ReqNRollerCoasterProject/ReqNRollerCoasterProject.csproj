@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ReqnrollFeatureFiles Update="Features\CalculatorExample2.feature">
+    <ReqnrollFeatureFiles Update="Features\MultiplyNumbers.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </ReqnrollFeatureFiles>

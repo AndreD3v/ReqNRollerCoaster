@@ -33,5 +33,13 @@ namespace ReqNRollerCoasterProject.StepDefinitions
         {
             _result.Should().Be(expectedResult);
         }
+
+        [When("the two numbers are Multiplied")]
+        public void WhenTheTwoNumbersAreMultiplied()
+        {
+            _result = _firstNumber * _secondNumber;
+            Log.Information($"_result = {_result}");
+        }
+
     }
 }

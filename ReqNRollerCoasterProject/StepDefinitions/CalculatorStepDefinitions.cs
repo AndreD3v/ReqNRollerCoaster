@@ -1,5 +1,3 @@
-using Serilog;
-
 namespace ReqNRollerCoasterProject.StepDefinitions
 {
     [Binding]

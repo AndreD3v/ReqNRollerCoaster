@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Serilog.Context;
+using Serilog.Events;
 
 namespace ReqNRollerCoasterProject.Hooks
 {
@@ -8,21 +9,43 @@ namespace ReqNRollerCoasterProject.Hooks
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            var logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "logfiles", "log.txt");
+            var logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "logfiles");
 
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console()
-                .WriteTo.File(logFilePath, rollingInterval: RollingInterval.Day)
+                .MinimumLevel.Debug()
+                .WriteTo.Console(restrictedToMinimumLevel: LogEventLevel.Information, outputTemplate:
+                        "[{Timestamp:HH:mm:ss.fffzzz} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .WriteTo.File($"{logFilePath}/log_{DateTime.Now.ToString("yyyyMMddHHmmssff")}.log",
+                    rollingInterval: RollingInterval.Day,
+                    outputTemplate:
+                        "[{Timestamp:HH:mm:ss.fffzzz} {Level:u3}] {LogScope} | {Message:lj}{NewLine}{Exception}")
+                .Enrich.FromLogContext()
                 .CreateLogger();
 
+            LogContext.PushProperty("LogScope", "BeforeTestRun");
             Log.Information("Test run starting up");
         }
 
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            Log.Information("Test run completed");
+            LogContext.PushProperty("LogScope", "AfterTestRun");
+            Log.Information("AfterTestRun - Test run completed");
             Log.CloseAndFlush();
+        }
+
+        [BeforeScenario]
+        public static void BeforeScenario(ScenarioContext scenarioContext)
+        {
+            LogContext.PushProperty("LogScope", scenarioContext.ScenarioInfo.Title);
+            Log.Information("BeforeScenario - Starting scenario: {LogScope}");
+        }
+
+        [AfterScenario]
+        public static void AfterScenario(ScenarioContext scenarioContext)
+        {
+            Log.Information("AfterScenario - Completed scenario: {LogScope}");
+            LogContext.Reset();
         }
     }
 }

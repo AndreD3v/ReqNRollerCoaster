@@ -9,7 +9,7 @@ This guide will help you set up your environment and understand the key componen
 
 ### ReqNroll Extension
 
-To participate in this deepdive, you need to install the ReqNroll extension. This extension provides enhanced functionality for running tests using Behavior Driven Development (BDD) principles. ReqNroll is the successor to SpecFlow, a popular Gherkin-based tool for .NET. I decided to move away from SpecFlow after reading this article, which explains the challenges with SpecFlow's development and how ReqNroll offers modern updates and better community support, while maintaining compatibility with existing projects.
+To participate in this deepdive, you need to install the ReqNroll extension. This extension provides enhanced functionality for running tests using Behavior Driven Development (BDD) principles. ReqNroll is the successor to SpecFlow, a popular Gherkin-based tool for .NET. I decided to move away from SpecFlow after reading below article, which explains the challenges with SpecFlow's development and how ReqNroll offers modern updates and better community support, while maintaining compatibility with existing projects.
 
 For more background, check the article https://reqnroll.net/news/2024/02/from-specflow-to-reqnroll-why-and-how/.
 

@@ -15,10 +15,10 @@ Scenario: Multiply a negative numbers
 	Given the first number is -7
 	And the second number is 53
 	When the two numbers are Multiplied
-    Then the result should be -371
+	Then the result should be -371
 
   Scenario: Multiply two other numbers
 	Given the first number is 12
 	And the second number is 17
 	When the two numbers are Multiplied
-    Then the result should be 204
+	Then the result should be 204

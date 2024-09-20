@@ -3,13 +3,13 @@ Welcome to the Parallel Testing Deepdive!
 
 A wild ride through the ups and downs of parallelizing software tests with reqNroll in C#. Buckle up as we dive into practical examples, best practices, and hands-on exercises to make your testing smoother, faster, and more efficient! Perfect for anyone looking to add some speed to their testing workflow.
 
-This guide will help you set up your environment and understand the key components used in this deepdive.
+This guide will help you set up your environment and understand the key components used in this deepdive. jg
 
 ## Prerequisites
 
 ### ReqNroll Extension
 
-To participate in this deepdive, you need to install the ReqNroll extension. This extension provides enhanced functionality for running tests using Behavior Driven Development (BDD) principles. ReqNroll is the successor to SpecFlow, a popular Gherkin-based tool for .NET. I decided to move away from SpecFlow after reading this article, which explains the challenges with SpecFlow's development and how ReqNroll offers modern updates and better community support, while maintaining compatibility with existing projects.
+To participate in this deepdive, you need to install the ReqNroll extension. This extension provides enhanced functionality for running tests using Behavior Driven Development (BDD) principles. ReqNroll is the successor to SpecFlow, a popular Gherkin-based tool for .NET. I decided to move away from SpecFlow after reading below article, which explains the challenges with SpecFlow's development and how ReqNroll offers modern updates and better community support, while maintaining compatibility with existing projects.
 
 For more background, check the article https://reqnroll.net/news/2024/02/from-specflow-to-reqnroll-why-and-how/.
 
@@ -43,7 +43,7 @@ Serilog is configured to log messages to both the console and a file. The log en
 
 ### Finding the Log Files
 
-The log files are stored in the `logfiles` directory within the project 'bin' directory. Each log file is named with a timestamp to ensure uniqueness.
+The log files are stored in the `logfiles` directory within the project `bin` directory. Each log file is named with a timestamp to ensure uniqueness.
 
 ## Parallel Execution
 

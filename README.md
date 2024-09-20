@@ -58,8 +58,6 @@ In this deepdive, we have implemented a conditional sleep mechanism that is trig
 1. **Tagging Scenarios**: Only scenarios or feature files tagged with `@demo` will trigger the sleep mechanism.
 2. **AfterStep Hook**: The `AfterStep` hook in `TestHooks.cs` checks for the `@demo` tag and calls the `SleepForDefinedDurationForDemoPurpose` method from `DemoHelpers.cs`.
 
-#### Example Scenario with @demo Tag
-
 ## Conclusion
 
 By following this guide, you should be able to set up your environment for the Parallel Testing deepdive. If you have any questions or run into issues, please don't hesitate to ask for help. Happy testing!

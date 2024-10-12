@@ -1,51 +1,50 @@
-namespace ReqNRollerCoasterProject.StepDefinitions
+namespace ReqNRollerCoasterProject.StepDefinitions;
+
+[Binding]
+public sealed class CalculatorStepDefinitions
 {
-    [Binding]
-    public sealed class CalculatorStepDefinitions
+    private int _firstNumber;
+    private int _secondNumber;
+    private int _result;
+
+    [Given("the first number is {int}")]
+    public void GivenTheFirstNumberIs(int firstNumber)
     {
-        private int _firstNumber;
-        private int _secondNumber;
-        private int _result;
+        _firstNumber = firstNumber;
+        Log.Information($"_firstNumber = {_firstNumber}");
+    }
 
-        [Given("the first number is {int}")]
-        public void GivenTheFirstNumberIs(int firstNumber)
-        {
-            _firstNumber = firstNumber;
-            Log.Information($"_firstNumber = {_firstNumber}");
-        }
+    [Given("the second number is {int}")]
+    public void GivenTheSecondNumberIs(int secondNumber)
+    {
+        _secondNumber = secondNumber;
+        Log.Information($"_secondNumber = {_secondNumber}");
+    }
 
-        [Given("the second number is {int}")]
-        public void GivenTheSecondNumberIs(int secondNumber)
-        {
-            _secondNumber = secondNumber;
-            Log.Information($"_secondNumber = {_secondNumber}");
-        }
+    [When("the two numbers are added")]
+    public void WhenTheTwoNumbersAreAdded()
+    {
+        _result = _firstNumber + _secondNumber;
+        Log.Information($"_result = {_result}");
+    }
 
-        [When("the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
-        {
-            _result = _firstNumber + _secondNumber;
-            Log.Information($"_result = {_result}");
-        }
+    [Then("the result should be {int}")]
+    public void ThenTheResultShouldBe(int expectedResult)
+    {
+        _result.Should().Be(expectedResult);
+    }
 
-        [Then("the result should be {int}")]
-        public void ThenTheResultShouldBe(int expectedResult)
-        {
-            _result.Should().Be(expectedResult);
-        }
+    [When("the two numbers are Multiplied")]
+    public void WhenTheTwoNumbersAreMultiplied()
+    {
+        _result = _firstNumber * _secondNumber;
+        Log.Information($"_result = {_result}");
+    }
 
-        [When("the two numbers are Multiplied")]
-        public void WhenTheTwoNumbersAreMultiplied()
-        {
-            _result = _firstNumber * _secondNumber;
-            Log.Information($"_result = {_result}");
-        }
-
-        [When("the two numbers are divided")]
-        public void WhenTheTwoNumbersAreDivided()
-        {
-            _result = _firstNumber / _secondNumber;
-            Log.Information($"_result = {_result}");
-        }
+    [When("the two numbers are divided")]
+    public void WhenTheTwoNumbersAreDivided()
+    {
+        _result = _firstNumber / _secondNumber;
+        Log.Information($"_result = {_result}");
     }
 }

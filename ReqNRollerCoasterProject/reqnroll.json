@@ -6,7 +6,6 @@
     "addNonParallelizableMarkerForTags": [
       "NonParallel",
       "LegacyFunctionX",
-      "LegacyFunctionY",
       "AnotherTag"
     ]
   }

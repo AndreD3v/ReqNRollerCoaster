@@ -1,4 +1,5 @@
 namespace ReqNRollerCoasterProject.Hooks;
+
 using ReqNRollerCoasterProject.Support;
 using Serilog.Context;
 using Serilog.Events;

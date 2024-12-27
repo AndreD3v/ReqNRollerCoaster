@@ -1,4 +1,4 @@
-@demo
+@demo @LegacyFunctionX
 Feature: DivideNumbers
   As a user
   I want to divide two numbers

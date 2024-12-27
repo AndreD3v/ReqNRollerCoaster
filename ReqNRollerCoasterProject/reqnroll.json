@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
+  "_comment1": "Here’s a place to provide an explanation of why the test scenarios below cannot yet be run in parallel.",
+  "_comment2": "Here too",
+  "generator": {
+    "addNonParallelizableMarkerForTags": [
+      "NonParallel",
+      "LegacyFunctionX",
+      "LegacyFunctionY",
+      "AnotherTag"
+    ]
+  }
+}

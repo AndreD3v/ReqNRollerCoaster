@@ -12,6 +12,7 @@ Scenario: Divide two numbers
 	When the two numbers are divided
 	Then the result should be 5
 
+@LegacyFunctionY
 Scenario: Divide a negative numbers
 	Given the first number is 192
 	And the second number is 32

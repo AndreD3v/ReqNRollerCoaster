@@ -16,6 +16,6 @@ public static class DemoHelpers
     {
         Log.Information($"Sleeping for {SleepDurationInSeconds} seconds...");
         Thread.Sleep(Seconds(SleepDurationInSeconds));
-        Console.WriteLine("Awake now!");
+        Log.Information("Awake now!");
     }
 }

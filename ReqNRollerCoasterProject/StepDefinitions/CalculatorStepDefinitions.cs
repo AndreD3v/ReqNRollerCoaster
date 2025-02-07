@@ -31,7 +31,7 @@ public sealed class CalculatorStepDefinitions
     [Then("the result should be {int}")]
     public void ThenTheResultShouldBe(int expectedResult)
     {
-        _result.Should().Be(expectedResult);
+        _result.ShouldBe(expectedResult);
     }
 
     [When("the two numbers are Multiplied")]
